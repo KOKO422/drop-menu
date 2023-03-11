@@ -3,6 +3,12 @@ a {
   text-decoration: none;
 }
 
+h5 {
+  color: #fff;
+  width: 40%;
+  padding: 2rem;
+}
+
 header {
   width: 100%;
 }
@@ -12,7 +18,7 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 3rem auto;
+  margin: 3rem auto 0;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -64,13 +70,35 @@ header {
           animation-fill-mode: forwards;
 }
 
+.globalnav .dropdown.open {
+  padding: 0;
+}
+
+.globalnav .dropdown.open li {
+  padding: 1rem;
+}
+
 .globalnav .dropdown li {
   display: inline-block;
   padding: 0.6rem 0;
+  width: 100%;
 }
 
 .globalnav .dropdown li a {
   color: #fff;
+}
+
+.globalnav .dropdown li a div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.globalnav .dropdown li a div p {
+  margin: 0;
 }
 
 .globalnav .dropdown li:hover {
@@ -106,7 +134,7 @@ header {
   left: 15rem;
   width: 100%;
   min-width: 13rem;
-  padding: 0.6rem 2rem;
+  padding: 0.6rem 1rem;
   display: none;
   -webkit-animation-name: dropdown-two;
           animation-name: dropdown-two;
@@ -116,6 +144,10 @@ header {
   /*--時間--*/
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.globalnav .dd-c.web.open {
+  margin-top: 7.4rem;
 }
 
 .globalnav .dd-c li {
@@ -160,6 +192,63 @@ header {
 
 .globalnav .close {
   display: block;
+}
+
+.thema-all {
+  background: #000;
+  padding: 0 5rem;
+}
+
+.thema-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 1rem;
+  border-right: solid;
+  border-left: solid;
+}
+
+.thema-list .customer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.thema-list .customer li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33%;
+  border: solid;
+  padding: 1rem;
+}
+
+.thema-list .customer li:hover {
+  background-color: #fff;
+  opacity: 0.6;
+}
+
+.thema-list .customer li a {
+  text-align: center;
+  width: 30%;
+}
+
+.thema-list .customer li a img {
+  border-radius: 50%;
+  width: 70%;
+}
+
+.thema-list .customer li div p {
+  color: #fff;
+  margin: 0.5rem;
+}
+
+.thema-list .customer li div p:nth-child(2) {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 768px) {
