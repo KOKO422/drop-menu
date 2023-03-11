@@ -1,0 +1,210 @@
+@charset "UTF-8";
+a {
+  text-decoration: none;
+}
+
+header {
+  width: 100%;
+}
+
+.globalnav-wrap {
+  font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 3rem auto;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #eee;
+}
+
+.globalnav {
+  margin: 0;
+  padding: auto 2rem;
+}
+
+.globalnav .dropdown-btn {
+  position: relative;
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  margin: auto 0.1rem;
+  cursor: pointer;
+}
+
+.globalnav .dropdown-btn:hover {
+  background: #004b64;
+  color: #fff;
+}
+
+.globalnav .dropdown-btn a {
+  color: #222;
+}
+
+.globalnav .dropdown-btn a:hover {
+  color: #fff;
+}
+
+.globalnav .dropdown {
+  z-index: 1000;
+  background: #222;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-width: 13rem;
+  padding: 0.6rem 1.25rem;
+  display: none;
+  -webkit-animation-name: dropdown-ani;
+          animation-name: dropdown-ani;
+  /*--アニメーション名--*/
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  /*--時間--*/
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.globalnav .dropdown li {
+  display: inline-block;
+  padding: 0.6rem 0;
+}
+
+.globalnav .dropdown li a {
+  color: #fff;
+}
+
+.globalnav .dropdown li:hover {
+  background: #004b64;
+}
+
+@-webkit-keyframes dropdown-ani {
+  0% {
+    top: 3.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 4rem;
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown-ani {
+  0% {
+    top: 3.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 4rem;
+    opacity: 1;
+  }
+}
+
+.globalnav .dd-c {
+  z-index: 1000;
+  background: #222;
+  position: absolute;
+  left: 15rem;
+  width: 100%;
+  min-width: 13rem;
+  padding: 0.6rem 2rem;
+  display: none;
+  -webkit-animation-name: dropdown-two;
+          animation-name: dropdown-two;
+  /*--アニメーション名--*/
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  /*--時間--*/
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.globalnav .dd-c li {
+  display: inline-block;
+  padding: 0.6rem 0;
+}
+
+.globalnav .dd-c li a {
+  color: #fff;
+}
+
+.globalnav .dd-c li:hover {
+  background: #004b64;
+}
+
+@-webkit-keyframes dropdown-two {
+  0% {
+    top: 2.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown-two {
+  0% {
+    top: 2.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 3rem;
+    opacity: 1;
+  }
+}
+
+.globalnav .nav-button-wrap,
+.globalnav .open {
+  display: block;
+}
+
+.globalnav .close {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: relative;
+    width: 100%;
+  }
+  .nav-button-wrap {
+    display: block;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 1rem;
+    height: 3.3rem;
+  }
+  .globalnav {
+    display: none;
+  }
+  .globalnav .close {
+    display: none;
+  }
+  .globalnav-wrap.open .globalnav {
+    display: block;
+    padding: 2.5rem 1.25rem 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .globalnav-wrap.open .globalnav li {
+    display: block;
+  }
+  .globalnav-wrap.open .globalnav li:hover {
+    background: transparent;
+  }
+  .globalnav-wrap.open .globalnav .dropdown {
+    display: block;
+    position: static;
+    background: transparent;
+  }
+}
+/*# sourceMappingURL=style.css.map */
