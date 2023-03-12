@@ -9,33 +9,68 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!--<ul class="menu">
-        <li>
-            <p class="m1">アコーディオン１</p>
-            <ul class="inner">
-                <li class="content1-1">コンテンツ１</li>
-                <li class="content1-2">コンテンツ２</li>
-                <li class="content1-3">コンテンツ３</li>
-            </ul>
-        </li>
-        <li>
-            <p class="m2">アコーディオン２</p>
-            <ul class="inner">
-                <li class="content2-1">コンテンツ１</li>
-                <li class="content2-2">コンテンツ２</li>
-                <li class="content2-3">コンテンツ３</li>
-            </ul>
-        </li>
-        <li>
-            <p class="m3">アコーディオン３</p>
-            <ul class="inner">
-                <li class="content3-1">コンテンツ１</li>
-                <li class="content3-2">コンテンツ２</li>
-                <li class="content3-3">コンテンツ３</li>
-            </ul>
-        </li>
-    </ul>-->
     <header>
+        <span class="nav_toggle">
+            <i></i>
+            <i></i>
+            <i></i>
+        </span>
+        <nav class="sp-nav">
+            <li class="sp-dropdown-btn">
+                TCD Wordpress テーマ
+                <ul class="sp-dropdown">
+                  <li><a href="#">TCD Wordpress テーマについて</a></li>
+                  <li class="dd-child"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
+                      <ul class="dd-c">
+                          <li><a href="">コンテンツビルダー</a></li>
+                          <li><a href="">ページビルダー</a></li>
+                          <li><a href="">クイックタグ&ensp;|&ensp;SNSタグ</a></li>
+                          <li><a href="">スマホフッター</a></li>
+                      </ul>
+                  <li><a href="#">メディア掲載</a></li>
+                  <li class="dd-child-web"><a href="#"><div class="dd-text"><p>Web制作会社制作一覧</p><p>></p></div></a></a></li>
+                      <ul class="dd-c web">
+                          <li class="dd-c-web"><a href="">特別ライセンス所有者様へ</a></li>
+                      </ul>
+                </ul>
+              </li>
+              <li class="sp-dropdown-btn thema">
+                テーマ一覧
+              </li>
+              <li class="sp-dropdown-btn">
+                  テーマ比較ナビ
+              </li>
+              <li class="sp-dropdown-btn">
+                  お客様の声
+                  <ul class="sp-dropdown">
+                    <li><a href="#">お客様インタビュー</a></li>
+                    <li><a href="#">TCD AWORD 2022</a></li>
+                    <li><a href="#">TCD AWORD 2021</a></li>
+                    <li><a href="#">TCD AWORD 2020</a></li>
+                  </ul>
+              </li>
+              <li class="sp-dropdown-btn">
+                  ブログ
+                  <ul class="sp-dropdown">
+                    <li><a href="#">WordPress大全集</a></li>
+                    <li><a href="#">SEO大全集</a></li>
+                    <li><a href="#">ブログ大全集</a></li>
+                    <li><a href="#">アフリエイト大全集</a></li>
+                  </ul>
+              </li>
+              <li class="sp-dropdown-btn">
+                  ログイン
+                  <ul class="sp-dropdown">
+                    <li><a href="#">ログインできないときは？</a></li>
+                    <li><a href="#">よくあるご質問</a></li>
+                    <li><a href="#">サポート</a></li>
+                    <li><a href="#">アップデート情報</a></li>
+                    <li><a href="#">TCDアフリエイト</a></li>
+                    <li><a href="#">TCD LABO</a></li>
+                  </ul>
+              </li>
+            </ul>          
+        </nav>          
         <nav class="globalnav-wrap">
           <ul class="globalnav">
             <li class="dropdown-btn">
@@ -206,9 +241,11 @@
         $(".dd-child").hover(
             function(){
                 $(this).next().addClass('open');
+               //$(".dd-c").stop().slideDown('fast');
             },function() {
-            $(this).next().removeClass('open');
-        }
+                $(this).next().removeClass('open');
+                //$(".dd-c").stop().slideUp('fast');
+            }
         );
         $(".dd-child-web").hover(
             function(){
@@ -223,7 +260,7 @@
             $('.thema-all').addClass('open');
         }, function() {
             //カーソルが離れた時
-            //$('.thema-all').removeClass('open');
+            $('.thema-all').removeClass('open');
         }
         );
         $('.customer-name').hover(
@@ -244,6 +281,18 @@
             $('.business').removeClass('open');
         }
         );
+        //sp version 
+        //修正必要
+        $(function(){
+            $(".nav_toggle").click(function(){
+                $(this).toggleClass("show");
+                $(".sp-nav").fadeToggle();
+            });
+            $("sp-dropdown-btn").on("click", function(){
+                $(this).next().slideToggle();
+            })
+        });
+
         // グローバルナビの開閉
         $(function() {
         $('.nav-button-wrap').on('click', function() {
