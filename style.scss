@@ -22,6 +22,7 @@ header {
   /* ハンバーガーメニューの線 */
   .toggle-all {
     text-align: -webkit-right;
+    //display: none;
   }
   .nav_toggle {
     display: block;
@@ -396,10 +397,13 @@ header {
         }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1200px) {
     header {
       position:relative;
       width:100%;
+    }
+    .toggle-all {
+      display: block;
     }
     .nav-button-wrap {
       display:block;
