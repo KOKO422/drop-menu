@@ -3,6 +3,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 li {
   list-style: none;
 }
@@ -24,6 +28,10 @@ header {
 }
 
 /* ハンバーガーメニューの線 */
+.toggle-all {
+  text-align: -webkit-right;
+}
+
 .nav_toggle {
   display: block;
   position: relative;
@@ -78,29 +86,46 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 1rem;
   background-color: #000;
   text-align: left;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transition: opacity .5s, visibility .5s;
   transition: opacity .5s, visibility .5s;
 }
 
+.sp-nav.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 .sp-nav .sp-dropdown-btn {
   color: #fff;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .sp-nav .sp-dropdown-btn:hover {
   background: #004b64;
 }
 
+.sp-nav .sp-dropdown-btn > p {
+  color: #fff;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown {
   z-index: 1000;
-  background: #222;
+  background: #000;
   position: absolute;
   left: 0;
   width: 100%;
   min-width: 13rem;
-  padding: 0.6rem 1.25rem;
+  padding: 0;
   display: none;
   -webkit-animation-name: dropdown-ani;
           animation-name: dropdown-ani;
@@ -112,16 +137,110 @@ header {
           animation-fill-mode: forwards;
 }
 
+.sp-nav .sp-dropdown-btn .sp-dropdown > li {
+  padding: 1rem;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown > li > a {
   color: #fff;
 }
 
+.sp-nav .sp-dropdown-btn .sp-dropdown > li:hover {
+  background: #004b64;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-c {
+  z-index: 1000;
+  background: #222;
+  position: absolute;
+  left: 15rem;
+  width: 100%;
+  min-width: 13rem;
+  padding: 0;
+  display: none;
+  cursor: pointer;
+  -webkit-animation-name: dropdown-two;
+          animation-name: dropdown-two;
+  /*--アニメーション名--*/
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  /*--時間--*/
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-c.web.open {
+  margin-top: 7.4rem;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-c li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-c li a {
+  color: #fff;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child .dd-c li:hover {
+  background: #004b64;
+}
+
+@-webkit-keyframes dropdown-two {
+  0% {
+    top: 2.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 3rem;
+    opacity: 1;
+  }
+}
+
+@keyframes dropdown-two {
+  0% {
+    top: 2.5rem;
+    opacity: 0;
+  }
+  100% {
+    top: 3rem;
+    opacity: 1;
+  }
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child-web .dd-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown.show {
   padding: 0;
+  display: block;
 }
 
 .sp-nav .sp-dropdown-btn .sp-dropdown.show li {
   padding: 1rem;
+}
+
+.sp-nav .sp-dropdown-btn .dd-c {
+  padding: 0;
+}
+
+.sp-nav .sp-dropdown-btn .dd-c:hover {
+  background: #004b64;
 }
 
 .globalnav-wrap {
@@ -273,17 +392,6 @@ header {
 
 .globalnav .dd-c li:hover {
   background: #004b64;
-}
-
-@-webkit-keyframes dropdown-two {
-  0% {
-    top: 2.5rem;
-    opacity: 0;
-  }
-  100% {
-    top: 3rem;
-    opacity: 1;
-  }
 }
 
 @keyframes dropdown-two {

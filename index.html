@@ -10,14 +10,16 @@
 </head>
 <body>
     <header>
-        <span class="nav_toggle">
-            <i></i>
-            <i></i>
-            <i></i>
-        </span>
+        <div class="toggle-all">
+            <span class="nav_toggle">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
         <nav class="sp-nav">
             <li class="sp-dropdown-btn">
-                TCD Wordpress テーマ
+                TCD Wordpress テーマ<p>></p>
                 <ul class="sp-dropdown">
                   <li><a href="#">TCD Wordpress テーマについて</a></li>
                   <li class="dd-child"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
@@ -35,13 +37,13 @@
                 </ul>
               </li>
               <li class="sp-dropdown-btn thema">
-                テーマ一覧
+                テーマ一覧<p>></p>
               </li>
               <li class="sp-dropdown-btn">
-                  テーマ比較ナビ
+                  テーマ比較ナビ<p>></p>
               </li>
               <li class="sp-dropdown-btn">
-                  お客様の声
+                  お客様の声<p>></p>
                   <ul class="sp-dropdown">
                     <li><a href="#">お客様インタビュー</a></li>
                     <li><a href="#">TCD AWORD 2022</a></li>
@@ -50,7 +52,7 @@
                   </ul>
               </li>
               <li class="sp-dropdown-btn">
-                  ブログ
+                  ブログ<p>></p>
                   <ul class="sp-dropdown">
                     <li><a href="#">WordPress大全集</a></li>
                     <li><a href="#">SEO大全集</a></li>
@@ -59,7 +61,7 @@
                   </ul>
               </li>
               <li class="sp-dropdown-btn">
-                  ログイン
+                  ログイン<p>></p>
                   <ul class="sp-dropdown">
                     <li><a href="#">ログインできないときは？</a></li>
                     <li><a href="#">よくあるご質問</a></li>
@@ -69,7 +71,7 @@
                     <li><a href="#">TCD LABO</a></li>
                   </ul>
               </li>
-            </ul>          
+            </ul>       
         </nav>          
         <nav class="globalnav-wrap">
           <ul class="globalnav">
@@ -282,17 +284,28 @@
         }
         );
         //sp version 
-        //修正必要
+        //ハンバーガーmenu
         $(function(){
             $(".nav_toggle").click(function(){
                 $(this).toggleClass("show");
-                $(".sp-nav").fadeToggle();
+                $(".sp-nav").toggleClass("show");
             });
-            $("sp-dropdown-btn").on("click", function(){
-                $(this).next().slideToggle();
-            })
+            $(".sp-dropdown-btn").click(function(){
+                $(this).next(".sp-dropdown").slideToggle("fest");
+            });
+            $('li').click(function(e) {
+            // メニュー表示/非表示
+            $(this).children('ul').slideToggle('fast');
+            e.stopPropagation();
+            $(".dd-child").click(function(){
+                $(this).next(".dd-c").slideToggle("fest");
+            });
+            $(".dd-child.web").click(function(){
+                $(this).next(".dd-c-web").slideToggle("fest");
+            });
         });
-
+        });
+        
         // グローバルナビの開閉
         $(function() {
         $('.nav-button-wrap').on('click', function() {

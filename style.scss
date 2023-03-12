@@ -1,6 +1,9 @@
 a {
   text-decoration: none;
 }
+p {
+  margin-bottom: 0;
+}
 li {
   list-style: none;
 }
@@ -17,6 +20,9 @@ header {
     width:100%;
   }
   /* ハンバーガーメニューの線 */
+  .toggle-all {
+    text-align: -webkit-right;
+  }
   .nav_toggle {
     display: block;
     position: relative;
@@ -59,46 +65,114 @@ header {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 1rem;
     background-color: #000;
     text-align: left;
-    //opacity: 0;
-    //visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity .5s, visibility .5s;
     &.show {
-      //opacity: 1;
-      //visibility: visible;
+      opacity: 1;
+      visibility: visible;
     }
     .sp-dropdown-btn{
       color: #fff;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
       &:hover {
         background:#004b64;
       }
+      & > p {
+        color: #fff;
+      }
       .sp-dropdown {
         z-index:1000;
-        background:#222;
+        background:#000;
         position:absolute;
         left:0;
         width:100%;
         min-width: 13rem;
-        padding:0.6rem 1.25rem;
+        padding:0;
         display:none;
         animation-name: dropdown-ani; /*--アニメーション名--*/
         animation-duration: 0.5s; /*--時間--*/
         animation-fill-mode: forwards;//完了時で停止
-        & > li > a {
+        & > li {
+          padding: 1rem;
+          & > a {
           color: #fff;
+        }
+        &:hover {
+        background:#004b64;
+        }
+        }
+        .dd-child {
+          .dd-text {
+            display: flex;
+            justify-content: space-between;
+          }
+          .dd-c {
+          z-index:1000;
+          background:#222;
+          position:absolute;
+          left: 15rem;
+          width:100%;
+          min-width: 13rem;
+          padding:0;
+          display:none;
+          cursor:pointer;
+          animation-name: dropdown-two; /*--アニメーション名--*/
+          animation-duration: 0.5s; /*--時間--*/
+          animation-fill-mode: forwards;//完了時で停止
+          &.web.open{
+            margin-top: 7.4rem;
+          }
+          li {
+            display:inline-block;
+            padding:1rem;
+            a {
+              color:#fff;
+            }
+            &:hover {
+            background:#004b64;
+            @keyframes dropdown-two {
+              0% {
+                top: 2.5rem;
+                opacity: 0;
+              }
+              100% {
+                top: 3rem;
+                opacity: 1;
+              }
+            }
+            }
+          }
+        }
+        }
+        .dd-child-web {
+          .dd-text {
+            display: flex;
+            justify-content: space-between;
+          }
         }
         //修正必要
         &.show {
           padding: 0;
+          display: block;
           li {
             padding: 1rem;
           }
         }
       }
+      //修正必要、dd-cの置く位置
+      .dd-c {
+        padding: 0;
+        &:hover {
+          background:#004b64;
+      }
     }
   }  
+  }
   //Pc version
   .globalnav-wrap {
     font-size:1rem;
