@@ -64,14 +64,8 @@
                     </ul>
               </ul>
             </li>
-            <li class="dropdown-btn">
+            <li class="dropdown-btn thema">
               テーマ一覧
-              <ul class="dropdown">
-                <li><a href="#">ドロップダウンメニュー</a></li>
-                <li><a href="#">ドロップダウンメニュー</a></li>
-                <li><a href="#">ドロップダウンメニュー</a></li>
-                <li><a href="#">ドロップダウンメニュー</a></li>
-              </ul>
             </li>
             <li class="dropdown-btn">
                 テーマ比較ナビ
@@ -109,7 +103,14 @@
         </nav>
         <div class="thema-all">
             <div class="thema-list">
-                <h5>For Customer</h5>
+                <div class="thema-name">
+                    <div class="customer-name">
+                        <h5 class="customer-name">For Customer</h5>
+                    </div>
+                    <div class="business-name">
+                        <h5 class="business-name">For Business</h5>
+                    </div>
+                </div>
                 <ul class="customer">
                     <li class="customer-list">
                         <a href=""><img src="https://picsum.photos/200/200" alt=""></a>
@@ -149,6 +150,44 @@
                         <div class=""><p>EC</p><p>E-COMMERRCE</p></div>
                     </li>
                 </ul>
+                <ul class="business">
+                    <li class="business-list">
+                        <a href=""><img src="https://picsum.photos/200/200" alt=""></a>
+                        <div class=""><p>EC</p><p>E-COMMERRCE</p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="https://picsum.photos/200/200" alt=""></a>
+                        <div class=""><p>EC</p><p>E-COMMERRCE</p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="https://picsum.photos/200/200" alt=""></a>
+                        <div class=""><p>EC</p><p>E-COMMERRCE</p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                    <li class="business-list">
+                        <a href=""><img src="" alt=""></a>
+                        <div class=""><p></p><p></p></div>
+                    </li>
+                </ul>
             </div>
         </div>
         </header>
@@ -178,7 +217,33 @@
             $(this).next().removeClass('open');
         }
         );
-        
+        $('.dropdown-btn.thema').hover(
+        function() {
+            //カーソルが重なった時
+            $('.thema-all').addClass('open');
+        }, function() {
+            //カーソルが離れた時
+            //$('.thema-all').removeClass('open');
+        }
+        );
+        $('.customer-name').hover(
+        function() {
+            //カーソルが重なった時
+            $('.customer').addClass('open');
+        }, function() {
+            //カーソルが離れた時
+            $('.customer').removeClass('open');
+        }
+        );
+        $('.business-name').hover(
+        function() {
+            //カーソルが重なった時
+            $('.business').addClass('open');
+        }, function() {
+            //カーソルが離れた時
+            $('.business').removeClass('open');
+        }
+        );
         // グローバルナビの開閉
         $(function() {
         $('.nav-button-wrap').on('click', function() {
