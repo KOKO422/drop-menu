@@ -22,8 +22,8 @@
                 TCD Wordpress テーマ<p>></p>
                 <ul class="sp-dropdown">
                   <li><a href="#">TCD Wordpress テーマについて</a></li>
-                  <li class="dd-child"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
-                      <ul class="dd-c">
+                  <li class="dd-child sp"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
+                      <ul class="dd-c sp">
                           <li><a href="">コンテンツビルダー</a></li>
                           <li><a href="">ページビルダー</a></li>
                           <li><a href="">クイックタグ&ensp;|&ensp;SNSタグ</a></li>
@@ -300,8 +300,11 @@
             $(".dd-child").click(function(){
                 $(this).next(".dd-c").slideToggle("fest");
             });
-            $(".dd-child.web").click(function(){
-                $(this).next(".dd-c-web").slideToggle("fest");
+            $(".dd-child-web").click(function(){
+                //$(this).next(".dd-c.web").slideToggle("fest");
+                $(this).next(".dd-c.web").stop().slideDown();
+            },function(){
+                $(this).next(".dd-c.web").stop().slideUp();
             });
         });
         });
