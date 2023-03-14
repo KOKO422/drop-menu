@@ -92,15 +92,6 @@ header {
   visibility: hidden;
   -webkit-transition: opacity .5s, visibility .5s;
   transition: opacity .5s, visibility .5s;
-  /*.dd-c.sp{
-      padding: 0;
-      &:hover {
-        background:#004b64;
-      }
-      & > li {
-        padding: 1rem;
-      }
-    }*/
 }
 
 .sp-nav.show {
@@ -110,10 +101,7 @@ header {
 
 .sp-nav .sp-dropdown-btn {
   color: #fff;
-  padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -127,10 +115,19 @@ header {
   color: #fff;
 }
 
+.sp-nav .sp-dropdown-btn .btn-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown {
   z-index: 1000;
   background: #000;
-  position: absolute;
   left: 0;
   width: 100%;
   min-width: 13rem;
@@ -167,10 +164,9 @@ header {
           justify-content: space-between;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-c {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c {
   z-index: 1000;
-  background: #fff;
-  position: absolute;
+  background: #000;
   left: 15rem;
   width: 100%;
   min-width: 13rem;
@@ -187,20 +183,24 @@ header {
           animation-fill-mode: forwards;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-c.web.open {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c.web.open {
   margin-top: 7.4rem;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-c .dd-c.sp {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c .dd-c.sp {
   display: inline-block;
   padding: 1rem;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-c .dd-c.sp a {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c .dd-c.sp .dd-c.sp li {
+  padding: 1rem;
+}
+
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c .dd-c.sp .dd-c.sp li > a {
   color: #fff;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-c .dd-c.sp:hover {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c .dd-c.sp .dd-c.sp li:hover {
   background: #004b64;
 }
 
@@ -226,7 +226,7 @@ header {
   }
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child-web .dd-text {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c .dd-child-web > a .dd-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,12 +235,12 @@ header {
           justify-content: space-between;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown.show {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c.show {
   padding: 0;
   display: block;
 }
 
-.sp-nav .sp-dropdown-btn .sp-dropdown.show li {
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-c.show li {
   padding: 1rem;
 }
 
