@@ -116,7 +116,7 @@ header {
             display: flex;
             justify-content: space-between;
           }
-      }
+        }
         .dd-c {
           z-index:1000;
           background:#000;
@@ -130,52 +130,37 @@ header {
           animation-name: dropdown-two; /*--アニメーション名--*/
           animation-duration: 0.5s; /*--時間--*/
           animation-fill-mode: forwards;//完了時で停止
-          &.web.open{
-            margin-top: 7.4rem;
+          &.web {
+            &:hover {
+            background:#004b64;
+            }
+            & > li {
+            padding: 1rem;
+              & > a {
+              color: #fff;
+              }
           }
-          .dd-c.sp{
-            display:inline-block;
-            padding:1rem;
-            .dd-c.sp li {
+          } 
+        }
+        .dd-c.sp{
+            & > li {
             padding: 1rem;
               & > a {
               color: #fff;
               }
             &:hover {
             background:#004b64;
-            @keyframes dropdown-two {
-              0% {
-                top: 2.5rem;
-                opacity: 0;
-              }
-              100% {
-                top: 3rem;
-                opacity: 1;
-              }
-            }
             }
           }
-        }
-        //修正必要
-        .dd-child-web {
-          & > a {
-            .dd-text {
+        } 
+      .dd-child.web {
+          .dd-text {
             display: flex;
             justify-content: space-between;
           }
-          }
-        }
-        //修正必要
-        &.show {
-          padding: 0;
-          display: block;
-          li {
-            padding: 1rem;
-          }
-        }
       }
-    } 
-    } 
+      } 
+    }
   }
   //Pc version
   .globalnav-wrap {
