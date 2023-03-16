@@ -295,26 +295,20 @@
                 $(".sp-nav").toggleClass("show");
             });
             $(".sp-dropdown-btn").click(function(){
-                $(this).next(".sp-dropdown").slideToggle("fest");
+                $(this).next(".sp-dropdown").slideToggle("fast");
             });
             $('li').click(function(e) {
             // メニュー表示/非表示
             $(this).children('ul').slideToggle('fast');
             e.stopPropagation();
+            });
             $(".dd-child").click(function(){
-                $(this).next(".dd-c").slideToggle("fest");
+                $(this).next(".dd-c").slideToggle("show");
             });
-            $(".dd-child-web").click(function(){
-                //$(this).next(".dd-c.web").slideToggle("fest");
-                $(this).next(".dd-c.web").stop().slideDown();
-            },function(){
-                $(this).next(".dd-c.web").stop().slideUp();
-            });
-        });
         });
         
         // グローバルナビの開閉
-        $(function() {
+        /*$(function() {
         $('.nav-button-wrap').on('click', function() {
             if ($(this).hasClass('active')) {
             // スマホ用メニューが表示されていたとき
@@ -328,7 +322,7 @@
             $('.globalnav-wrap , body').addClass('open');
             }
         });
-        });
+        });*/
     </script>
 </body>
 </html>
