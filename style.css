@@ -30,6 +30,7 @@ header {
 /* ハンバーガーメニューの線 */
 .toggle-all {
   text-align: -webkit-right;
+  display: none;
 }
 
 .nav_toggle {
@@ -155,6 +156,10 @@ header {
   background: #004b64;
 }
 
+.sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp {
+  cursor: pointer;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown .dd-child.sp .dd-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -173,14 +178,6 @@ header {
   padding: 0;
   display: none;
   cursor: pointer;
-  -webkit-animation-name: dropdown-two;
-          animation-name: dropdown-two;
-  /*--アニメーション名--*/
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  /*--時間--*/
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
 }
 
 .sp-nav .sp-dropdown-btn .sp-dropdown .dd-c.web:hover {
@@ -337,7 +334,7 @@ header {
   left: 15rem;
   width: 100%;
   min-width: 13rem;
-  padding: 0.6rem 1rem;
+  padding-left: 0;
   display: none;
   cursor: pointer;
   -webkit-animation-name: dropdown-two;
@@ -361,6 +358,10 @@ header {
 
 .globalnav .dd-c li a {
   color: #fff;
+}
+
+.globalnav .dd-c:hover {
+  display: block;
 }
 
 .globalnav .dd-c li:hover {
@@ -389,6 +390,10 @@ header {
   }
 }
 
+.globalnav .dd-c.web:hover {
+  display: block;
+}
+
 .globalnav .nav-button-wrap,
 .globalnav .open {
   display: block;
@@ -409,6 +414,10 @@ header {
   display: block;
   -webkit-transition: 1s;
   transition: 1s;
+}
+
+.thema-all:hover {
+  display: block;
 }
 
 .thema-list {

@@ -22,7 +22,7 @@ header {
   /* ハンバーガーメニューの線 */
   .toggle-all {
     text-align: -webkit-right;
-    //display: none;
+    display: none;
   }
   .nav_toggle {
     display: block;
@@ -242,7 +242,7 @@ header {
       left: 15rem;
       width:100%;
       min-width: 13rem;
-      padding:0.6rem 1rem;
+      padding-left: 0;
       display:none;
       cursor:pointer;
       animation-name: dropdown-two; /*--アニメーション名--*/
@@ -258,6 +258,9 @@ header {
           color:#fff;
         }
       }
+      &:hover {
+        display: block;
+      }
       li:hover {
         background:#004b64;
         @keyframes dropdown-two {
@@ -270,6 +273,11 @@ header {
             opacity: 1;
           }
         }
+      }
+    }
+    .dd-c.web {
+      &:hover {
+        display: block;
       }
     }
     .nav-button-wrap,
@@ -288,6 +296,9 @@ header {
     &.open{
       display: block;
       transition: 1s;
+    }
+    &:hover { //openにhoverを付けることで表示を維持
+      display: block;
     }
   }
   .thema-list {
