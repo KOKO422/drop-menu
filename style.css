@@ -331,7 +331,7 @@ header {
   z-index: 1000;
   background: #222;
   position: absolute;
-  left: 15rem;
+  left: 15.2rem;
   width: 100%;
   min-width: 13rem;
   padding-left: 0;
@@ -345,10 +345,6 @@ header {
   /*--時間--*/
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-}
-
-.globalnav .dd-c.web.open {
-  margin-top: 7.4rem;
 }
 
 .globalnav .dd-c li {
@@ -370,28 +366,28 @@ header {
 
 @-webkit-keyframes dropdown-two {
   0% {
-    top: 2.5rem;
+    top: 3rem;
     opacity: 0;
   }
   100% {
-    top: 3rem;
+    top: 3.3rem;
     opacity: 1;
   }
 }
 
 @keyframes dropdown-two {
   0% {
-    top: 2.5rem;
+    top: 3rem;
     opacity: 0;
   }
   100% {
-    top: 3rem;
+    top: 3.3rem;
     opacity: 1;
   }
 }
 
-.globalnav .dd-c.web:hover {
-  display: block;
+.globalnav .dd-c.web {
+  margin-top: 7.2rem;
 }
 
 .globalnav .nav-button-wrap,
@@ -424,19 +420,28 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0 1rem;
   border-left: solid;
   z-index: 1000;
 }
 
-.thema-list .customer-name {
-  width: 40%;
-  padding: 2rem 1rem;
+.thema-list .thema-name {
+  width: 18%;
 }
 
-.thema-list .business-name {
-  width: 40%;
-  padding: 2rem 1rem;
+.thema-list .thema-name .customer-name {
+  width: 100%;
+}
+
+.thema-list .thema-name .customer-name .customer-text {
+  padding: 4rem 1rem;
+}
+
+.thema-list .thema-name .business-name {
+  width: 100%;
+}
+
+.thema-list .thema-name .business-name .business-text {
+  padding: 4rem 1rem;
 }
 
 .thema-list .customer {
@@ -448,9 +453,17 @@ header {
   padding: 0;
   margin: 0;
   display: none;
+  width: 100%;
 }
 
 .thema-list .customer.open {
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.thema-list .customer:hover {
   display: block;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,13 +474,17 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 33%;
+  width: 30%;
   border: solid;
   padding: 1rem;
 }
 
 .thema-list .customer li:hover {
-  background-color: #fff;
+  background-color: #333;
+  /* ホバー時の背景色 */
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+  /* 光らせるための影 */
   opacity: 0.6;
 }
 
@@ -499,9 +516,17 @@ header {
   padding: 0;
   margin: 0;
   display: none;
+  width: 100%;
 }
 
 .thema-list .business.open {
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.thema-list .business:hover {
   display: block;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,13 +537,17 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 33%;
+  width: 30%;
   border: solid;
   padding: 1rem;
 }
 
 .thema-list .business li:hover {
-  background-color: #fff;
+  background-color: #333;
+  /* ホバー時の背景色 */
+  -webkit-box-shadow: 0 0 10px #fff;
+          box-shadow: 0 0 10px #fff;
+  /* 光らせるための影 */
   opacity: 0.6;
 }
 
