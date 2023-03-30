@@ -224,6 +224,15 @@ header {
   transition: all 0.3s;
 }
 
+.arrow.small {
+  width: 0.5rem;
+  height: 0.5rem;
+  right: 1rem;
+  margin-right: 0.3rem;
+  border-top: 0.1rem solid #fff;
+  border-right: 0.1rem solid #fff;
+}
+
 .arrow.rotate {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);

@@ -168,6 +168,14 @@ header {
     border-right: 0.3rem solid #fff;
     transform: rotate(45deg);
     transition: all 0.3s;
+    &.small {
+      width: 0.5rem;
+      height: 0.5rem;
+      right: 1rem;
+      margin-right: 0.3rem;
+      border-top: 0.1rem solid #fff;
+      border-right: 0.1rem solid #fff;
+    }
   }
   .arrow.rotate {
     transform: rotate(135deg);

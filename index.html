@@ -22,7 +22,7 @@
                 <div class="btn-text"><p>TCD Wordpress テーマ</p><a class="arrow"></a></div>
                 <ul class="sp-dropdown">
                   <li><a href="#">TCD Wordpress テーマについて</a></li>
-                  <li class="dd-child sp"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
+                  <li class="dd-child sp"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><object data="" type=""><a class="arrow small"></a></object></div></a></li>
                       <ul class="dd-c sp">
                           <li><a href="">コンテンツビルダー</a></li>
                           <li><a href="">ページビルダー</a></li>
@@ -32,7 +32,7 @@
                   <li><a href="#">メディア掲載</a></li>
                   <li class="dd-child web">
                     <a href="#">
-                        <div class="dd-text"><p>Web制作会社制作一覧</p><p>></p></div>
+                        <div class="dd-text"><p>Web制作会社制作一覧</p><object data="" type=""><a class="arrow small"></a></object></div>
                     </a>
                   </li>
                       <ul class="dd-c web">
@@ -292,10 +292,18 @@
                 $(this).toggleClass("show");
                 $(".sp-nav").toggleClass("show");
             });
-            $(".sp-dropdown-btn").click(function(){
+            $(".sp-dropdown-btn").click(function() {
+            var dropdown = $(this).next(".sp-dropdown");
+            $(".sp-dropdown").not(dropdown).slideUp("fast");
+            dropdown.slideDown("fast");
+            var arrows = $(".arrow");
+            arrows.not($(this).find(".arrow")).removeClass("rotate");
+            $(this).find(".arrow").toggleClass("rotate");
+            });
+            /*$(".sp-dropdown-btn").click(function(){
                 $(this).next(".sp-dropdown").slideToggle("fast");
                 $(".arrow").toggleClass("rotate");
-            });
+            });*/
             $('li').click(function(e) {
             // メニュー表示/非表示
             $(this).children('ul').slideToggle('fast');
@@ -304,9 +312,6 @@
             $(".dd-child").click(function(){
                 $(this).next(".dd-c").slideToggle("show");
             });
-            /*$(".arrow").on("click", function () {
-            $(this).toggleClass("rotate");
-            });*/
         });
     </script>
 </body>
