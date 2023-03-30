@@ -22,7 +22,7 @@ header {
   /* ハンバーガーメニューの線 */
   .toggle-all {
     text-align: -webkit-right;
-    display: none;
+    //display: none;
   }
   .nav_toggle {
     display: block;
@@ -160,6 +160,18 @@ header {
       } 
     }
   }
+  .arrow {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    border-top: 0.3rem solid #fff;
+    border-right: 0.3rem solid #fff;
+    transform: rotate(45deg);
+    transition: all 0.3s;
+  }
+  .arrow.rotate {
+    transform: rotate(135deg);
+  }
   //Pc version
   .globalnav-wrap {
     font-size:1rem;
@@ -239,7 +251,7 @@ header {
       z-index:1000;
       background:#222;
       position:absolute;
-      left: 15.2rem;
+      left: calc(15.2rem);
       width:100%;
       min-width: 13rem;
       padding-left: 0;

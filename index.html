@@ -19,7 +19,7 @@
         </div>
         <nav class="sp-nav">
             <li class="sp-dropdown-btn">
-                <div class="btn-text"><p>TCD Wordpress テーマ</p><p>></p></div>
+                <div class="btn-text"><p>TCD Wordpress テーマ</p><a class="arrow"></a></div>
                 <ul class="sp-dropdown">
                   <li><a href="#">TCD Wordpress テーマについて</a></li>
                   <li class="dd-child sp"><a href="#"><div class="dd-text"><p>TCDテーマオプション</p><p>></p></div></a></li>
@@ -41,13 +41,13 @@
                 </ul>
               </li>
               <li class="sp-dropdown-btn thema">
-                <div class="btn-text"><p>テーマ一覧</p><p>></p></div>
+                <div class="btn-text"><p>テーマ一覧</p><a class="arrow"></a></div>
               </li>
               <li class="sp-dropdown-btn">
-                <div class="btn-text"><p>テーマ比較ナビ</p><p>></p></div>
+                <div class="btn-text"><p>テーマ比較ナビ</p><a class="arrow"></a></div>
               </li>
               <li class="sp-dropdown-btn">
-                <div class="btn-text"><p>お客様の声</p><p>></p></div>
+                <div class="btn-text"><p>お客様の声</p><a class="arrow"></a></div>
                   <ul class="sp-dropdown">
                     <li><a href="#">お客様インタビュー</a></li>
                     <li><a href="#">TCD AWORD 2022</a></li>
@@ -56,7 +56,7 @@
                   </ul>
               </li>
               <li class="sp-dropdown-btn">
-                <div class="btn-text"><p>ブログ</p><p>></p></div>
+                <div class="btn-text"><p>ブログ</p><a class="arrow"></a></div>
                   <ul class="sp-dropdown">
                     <li><a href="#">WordPress大全集</a></li>
                     <li><a href="#">SEO大全集</a></li>
@@ -65,7 +65,7 @@
                   </ul>
               </li>
               <li class="sp-dropdown-btn">
-                <div class="btn-text"><p>ログイン</p><p>></p></div>
+                <div class="btn-text"><p>ログイン</p><a class="arrow"></a></div>
                   <ul class="sp-dropdown">
                     <li><a href="#">ログインできないときは？</a></li>
                     <li><a href="#">よくあるご質問</a></li>
@@ -294,6 +294,7 @@
             });
             $(".sp-dropdown-btn").click(function(){
                 $(this).next(".sp-dropdown").slideToggle("fast");
+                $(".arrow").toggleClass("rotate");
             });
             $('li').click(function(e) {
             // メニュー表示/非表示
@@ -303,6 +304,9 @@
             $(".dd-child").click(function(){
                 $(this).next(".dd-c").slideToggle("show");
             });
+            /*$(".arrow").on("click", function () {
+            $(this).toggleClass("rotate");
+            });*/
         });
     </script>
 </body>
