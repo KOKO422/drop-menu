@@ -292,6 +292,7 @@
                 $(this).toggleClass("show");
                 $(".sp-nav").toggleClass("show");
             });
+            /*クリック時で閉じない、他のメニュバー時は閉じる*/
             $(".sp-dropdown-btn").click(function() {
             var dropdown = $(this).next(".sp-dropdown");
             $(".sp-dropdown").not(dropdown).slideUp("fast");
@@ -300,7 +301,21 @@
             arrows.not($(this).find(".arrow")).removeClass("rotate");
             $(this).find(".arrow").toggleClass("rotate");
             });
-            /*$(".sp-dropdown-btn").click(function(){
+            /*クリック時で閉じない、他のメニュバー時は閉じる
+            $(".sp-dropdown-btn").click(function() {
+                var dropdown = $(this).next(".sp-dropdown");
+                var siblings = $(this).parent().siblings().find(".sp-dropdown");
+                siblings.slideUp();
+                siblings.removeClass("fest");
+                dropdown.slideToggle();
+                $(".sp-dropdown").not(dropdown).slideUp("fast");
+                $(this).toggleClass("fest");
+                var arrows = $(".arrow");
+                arrows.not($(this).find(".arrow")).removeClass("rotate");
+                $(this).find(".arrow").toggleClass("rotate");
+            });*/
+            /*他のメニュバー時閉じない。クリック時では可能
+            $(".sp-dropdown-btn").click(function(){
                 $(this).next(".sp-dropdown").slideToggle("fast");
                 $(".arrow").toggleClass("rotate");
             });*/
