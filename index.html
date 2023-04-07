@@ -296,10 +296,17 @@
             $(".sp-dropdown-btn").click(function() {
             var dropdown = $(this).next(".sp-dropdown");
             $(".sp-dropdown").not(dropdown).slideUp("fast");
-            dropdown.slideDown("fast");
+            dropdown.slideDown("fast"); // クリックされたdropdownを表示させる
+
             var arrows = $(".arrow");
             arrows.not($(this).find(".arrow")).removeClass("rotate");
             $(this).find(".arrow").toggleClass("rotate");
+            });
+            //問題点　俺が思う
+            $('li').click(function(e) {
+            // メニュー表示/非表示
+            $(this).children('ul').slideToggle('fast');
+            e.stopPropagation();
             });
             /*クリック時で閉じない、他のメニュバー時は閉じる
             $(".sp-dropdown-btn").click(function() {
@@ -319,11 +326,6 @@
                 $(this).next(".sp-dropdown").slideToggle("fast");
                 $(".arrow").toggleClass("rotate");
             });*/
-            $('li').click(function(e) {
-            // メニュー表示/非表示
-            $(this).children('ul').slideToggle('fast');
-            e.stopPropagation();
-            });
             $(".dd-child").click(function(){
                 $(this).next(".dd-c").slideToggle("show");
             });
