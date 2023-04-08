@@ -293,18 +293,20 @@
                 $(".sp-nav").toggleClass("show");
             });
             
-            $(".sp-dropdown-btn").click(function() {
-                /*var dropdown = $(this).next(".sp-dropdown");
+            /*$(".sp-dropdown-btn").click(function() {
+                var dropdown = $(this).next(".sp-dropdown");
                 var arrows = $(this).find(".arrow");
+                
 
                 $(".sp-dropdown").not(dropdown).slideUp("fast");//
-                //dropdown.slideDown("fast");*/
+                //dropdown.slideDown("fast");
 
                 $(".arrow").not(arrows).removeClass("rotate");
                 arrows.toggleClass("rotate");
-            });
+            });*/
             $(".btn-text").click(function(e) {
                 var spDropdowns = $(this).next("ul")//.find(".sp-dropdown");
+                var arrows = $(this).find(".arrow");
                 $(this).next(".sp-dropdown").toggleClass("show");
                 $(".sp-dropdown").not(spDropdowns).removeClass("show");
                 e.stopPropagation();

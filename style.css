@@ -133,17 +133,13 @@ header {
   min-width: 13rem;
   padding: 0;
   display: none;
-  -webkit-animation-name: dropdown-ani;
-          animation-name: dropdown-ani;
-  /*--アニメーション名--*/
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  /*--時間--*/
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  cursor: pointer;
 }
 
 .sp-nav .sp-dropdown-btn .sp-dropdown.show {
+  -webkit-animation: dropdown-ani 2s;
+          animation: dropdown-ani 2s;
+  /*--アニメーション名--*/
   display: block !important;
 }
 
