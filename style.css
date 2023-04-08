@@ -143,6 +143,10 @@ header {
           animation-fill-mode: forwards;
 }
 
+.sp-nav .sp-dropdown-btn .sp-dropdown.show {
+  display: block !important;
+}
+
 .sp-nav .sp-dropdown-btn .sp-dropdown > li {
   padding: 1rem;
 }

@@ -292,7 +292,30 @@
                 $(this).toggleClass("show");
                 $(".sp-nav").toggleClass("show");
             });
-            /*クリック時で閉じない、他のメニュバー時は閉じる*/
+            
+            $(".sp-dropdown-btn").click(function() {
+                /*var dropdown = $(this).next(".sp-dropdown");
+                var arrows = $(this).find(".arrow");
+
+                $(".sp-dropdown").not(dropdown).slideUp("fast");//
+                //dropdown.slideDown("fast");*/
+
+                $(".arrow").not(arrows).removeClass("rotate");
+                arrows.toggleClass("rotate");
+            });
+            $(".btn-text").click(function(e) {
+                var spDropdowns = $(this).next("ul")//.find(".sp-dropdown");
+                $(this).next(".sp-dropdown").toggleClass("show");
+                $(".sp-dropdown").not(spDropdowns).removeClass("show");
+                e.stopPropagation();
+                $(".arrow").not(arrows).removeClass("rotate");
+                arrows.toggleClass("rotate");
+            });
+            $(".dd-child").click(function() {
+                $(this).next(".dd-c").slideToggle("show");
+            });
+            
+            /*クリック時で閉じない、他のメニュバー時は閉じる
             $(".sp-dropdown-btn").click(function() {
             var dropdown = $(this).next(".sp-dropdown");
             $(".sp-dropdown").not(dropdown).slideUp("fast");
@@ -308,6 +331,7 @@
             $(this).children('ul').slideToggle('fast');
             e.stopPropagation();
             });
+
             /*クリック時で閉じない、他のメニュバー時は閉じる
             $(".sp-dropdown-btn").click(function() {
                 var dropdown = $(this).next(".sp-dropdown");
@@ -326,9 +350,6 @@
                 $(this).next(".sp-dropdown").slideToggle("fast");
                 $(".arrow").toggleClass("rotate");
             });*/
-            $(".dd-child").click(function(){
-                $(this).next(".dd-c").slideToggle("show");
-            });
         });
     </script>
 </body>

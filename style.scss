@@ -102,6 +102,9 @@ header {
         animation-name: dropdown-ani; /*--アニメーション名--*/
         animation-duration: 0.5s; /*--時間--*/
         animation-fill-mode: forwards;//完了時で停止
+        &.show {
+          display: block !important;
+        }
         & > li {
           padding: 1rem;
           & > a {
@@ -110,6 +113,7 @@ header {
         &:hover {
         background:#004b64;
         }
+        
         }
         .dd-child.sp {
           cursor: pointer;
@@ -138,7 +142,7 @@ header {
               color: #fff;
               }
           }
-          } 
+          }
         }
         .dd-c.sp{
             & > li {
