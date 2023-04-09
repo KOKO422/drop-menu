@@ -22,7 +22,7 @@ header {
   /* ハンバーガーメニューの線 */
   .toggle-all {
     text-align: -webkit-right;
-    //display: none;
+    display: none;
   }
   .nav_toggle {
     display: block;
@@ -100,8 +100,7 @@ header {
         display:none;
         cursor: pointer;
         &.show {
-          animation: dropdown-ani 2s; /*--アニメーション名--*/
-          display: block !important;
+          display: block;
         }
         & > li {
           padding: 1rem;
@@ -111,7 +110,6 @@ header {
         &:hover {
         background:#004b64;
         }
-        
         }
         .dd-child.sp {
           cursor: pointer;

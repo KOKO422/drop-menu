@@ -30,6 +30,7 @@ header {
 /* ハンバーガーメニューの線 */
 .toggle-all {
   text-align: -webkit-right;
+  display: none;
 }
 
 .nav_toggle {
@@ -137,10 +138,7 @@ header {
 }
 
 .sp-nav .sp-dropdown-btn .sp-dropdown.show {
-  -webkit-animation: dropdown-ani 2s;
-          animation: dropdown-ani 2s;
-  /*--アニメーション名--*/
-  display: block !important;
+  display: block;
 }
 
 .sp-nav .sp-dropdown-btn .sp-dropdown > li {
